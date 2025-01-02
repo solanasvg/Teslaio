@@ -1,0 +1,123 @@
+html{
+	height: 100%;
+}
+body{
+	background-color: black;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	margin: 0px;
+	font-family: Arial;
+}
+
+#title{
+	color: white;
+	text-align: center;
+	margin: 10px;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+#title.show{
+	opacity: 1;
+}
+
+#carWrapper{
+	display: flex;
+	align-items: flex-end;
+	width: 100%;
+	overflow: hidden;
+	transition: 0.3s ease;
+}
+
+#carWrapper.hide{
+	opacity: 0;
+}
+
+#carWrapper.all{
+	display: flex;
+	flex-wrap: wrap;
+	height: 100%;
+	width: 100%;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+#carWrapper > svg{
+	margin: 20px 10vw 0px 10vw;
+	min-width: 80vw;
+	height: 100%;
+	max-height: 700px;
+	transition: transform 0.7s ease;
+	will-change: transform;
+}
+
+#carWrapper.all > svg{
+	min-width: 0px;
+	min-height: 0px;
+	margin: 0px;
+	width: 25%;
+	height: 50%;
+}
+
+#carWrapper.all > #cyberQuad{
+	height: 50%;
+}
+
+#semi{
+	max-height: 1000px;
+}
+
+.car, .wheel, .window{
+	stroke: #2196F3;
+	filter:url(#glow);
+	fill: transparent;
+	stroke-width: 2;
+}
+
+#cyberQuad > .car, #cyberQuad > .wheel, #cyberQuad > .window{
+	stroke-width: 3;
+}
+
+#carSelector{
+	display: flex;
+	justify-content: space-between;
+	margin: 20px auto;
+	max-width: 400px;
+}
+
+#carSelector > button{
+	border: solid #2196F3 2px;
+	border-radius: 5px;
+	color: white;
+	font-size: 20px;
+	padding: 5px 10px;
+	margin: 10px;
+	cursor: pointer;
+	background: none;
+	transition: opacity 0.2s ease, box-shadow 0.2s ease;
+	width: 100px;
+	box-shadow: 0 0px 4px #2196F3, 0 0px 4px #2196F3;
+	opacity: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#carSelector > button:focus{
+	outline: none;
+}
+
+#carSelector > button:hover{
+	box-shadow: 0 0px 10px #2196F3, 0 0px 10px #2196F3;
+}
+
+#carSelector > button.show{
+	opacity: 1;
+}
+
+#carSelector > button > span{
+	margin: 0px 5px;
+}
